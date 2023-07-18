@@ -4,11 +4,11 @@
   grid-template-columns: 2fr 10fr;
 }
 
-.dialogs_items {
+.dialogsItems {
   padding: 10px;
 }
 
-.dialogs_items .active {
+.dialogsItems .active {
   color: #ffc800;
 }
 
