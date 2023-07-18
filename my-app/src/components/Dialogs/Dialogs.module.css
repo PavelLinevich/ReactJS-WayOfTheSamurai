@@ -1,4 +1,21 @@
 .dialogs {
   color: #000;
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 10fr;
 }
+
+.dialogs_items {
+  padding: 10px;
+}
+
+.dialogs_items .active {
+  color: #ffc800;
+}
+
+.dialog {}
+
+.messages {
+  padding: 10px;
+}
+
+.message {}
