@@ -8,7 +8,7 @@ function Navbar(props) {
         <a href="/profile">Profile</a>
       </div>
       <div className={styles.item}>
-        <a href="/message">Messages</a>
+        <a href="/dialogs">Dialogs</a>
       </div>
       <div className={styles.item}>
         <a href="/news">News</a>
@@ -17,7 +17,7 @@ function Navbar(props) {
         <a href="/music">Music</a>
       </div>
       <div className={styles.item}>
-        <a href="/setting">Settings</a>
+        <a href="/settings">Settings</a>
       </div>
     </nav>
   );
