@@ -8,8 +8,8 @@ function MyPost() {
       My posts
       <div>New posts</div>
       <div>
-        <Post />
-        <Post />
+        <Post message="Hello. How are you?" likes="2"/>
+        <Post message="HI! I am fine!" likes="5"/>
       </div>
     </div>
   );
