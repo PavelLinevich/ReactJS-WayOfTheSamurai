@@ -2,8 +2,10 @@
   grid-area: n;
   background: #e7e7e7;
   padding: 5px;
+  height: 90vh;
 }
 
 .item a {
   color: #000;
+  text-decoration: none;
 }

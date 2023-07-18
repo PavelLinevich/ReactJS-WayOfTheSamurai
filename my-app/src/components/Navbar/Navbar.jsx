@@ -1,23 +1,23 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 
-function Navbar() {
+function Navbar(props) {
   return (
     <nav className={styles.nav}>
       <div className={styles.item}>
-        <a href="#">Profile</a>
+        <a href="/profile">Profile</a>
       </div>
       <div className={styles.item}>
-        <a href="#">Messages</a>
+        <a href="/message">Messages</a>
       </div>
       <div className={styles.item}>
-        <a href="#">News</a>
+        <a href="/news">News</a>
       </div>
       <div className={styles.item}>
-        <a href="#">Music</a>
+        <a href="/music">Music</a>
       </div>
       <div className={styles.item}>
-        <a href="#">Settings</a>
+        <a href="/setting">Settings</a>
       </div>
     </nav>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Header.module.css";
 
-function Header() {
+function Header(props) {
   return (
     <header className={styles.header}>
       <img
