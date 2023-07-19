@@ -6,6 +6,7 @@ let state = {
       { id: 1, message: "Hello. How are you?", like: 2 },
       { id: 2, message: "HI! I am fine!", like: 5 },
     ],
+    newPostText: "",
   },
   messages: {
     dialogs: [
@@ -21,17 +22,40 @@ let state = {
       { id: 2, message: "How are you?" },
       { id: 3, message: "Cool!" },
     ],
+    newMessageText: "",
   },
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: 3,
-    message: postMessage,
+    message: state.profile.newPostText,
     like: 1,
   };
 
   state.profile.posts.push(newPost);
+  state.profile.newPostText = "";
+  rerenderEntireTree(state);
+};
+
+export let updateNewPostText = (text) => {
+  state.profile.newPostText = text;
+  rerenderEntireTree(state);
+};
+
+export let addMessage = () => {
+  let newMessage = {
+    id: 3,
+    message: state.messages.newMessageText,
+  };
+
+  state.messages.messages.push(newMessage);
+  state.messages.newMessageText = "";
+  rerenderEntireTree(state);
+};
+
+export let updateNewMessageText = (message) => {
+  state.messages.newMessageText = message;
   rerenderEntireTree(state);
 };
 
