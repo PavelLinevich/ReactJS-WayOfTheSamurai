@@ -76,10 +76,23 @@ export let addPostActionCreator = () => {
 
 export let updateNewPostTextActionCreator = (text) => {
   return {
-    type: UPDATE_NEW_POST_TEXT, text: text
+    type: UPDATE_NEW_POST_TEXT,
+    text: text,
   };
 };
 
+export let addMessageActionCreator = () => {
+  return {
+    type: ADD_MESSAGE,
+  };
+};
+
+export let updateNewMessageTextActionCreator = (message) => {
+  return {
+    type: UPDATE_NEW_MESSAGE_TEXT,
+    message: message,
+  };
+};
 
 export default store;
 window.store = store;
