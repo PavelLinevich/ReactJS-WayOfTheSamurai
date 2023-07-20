@@ -1,7 +1,6 @@
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
-const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
+import dialogsReducer from './dialogs-reducer'
+import profileReducer from './profile-reducer'
+import sidebarReducer from './sidebar-reducer'
 
 let store = {
   _state: {
@@ -41,57 +40,12 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      let newPost = {
-        id: 3,
-        message: this._state.profile.newPostText,
-        like: 1,
-      };
-      this._state.profile.posts.push(newPost);
-      this._state.profile.newPostText = "";
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.profile.newPostText = action.text;
-      this._callSubscriber(this._state);
-    } else if (action.type === ADD_MESSAGE) {
-      let newMessage = {
-        id: 3,
-        message: this._state.messages.newMessageText,
-      };
-      this._state.messages.messages.push(newMessage);
-      this._state.messages.newMessageText = "";
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-      this._state.messages.newMessageText = action.message;
-      this._callSubscriber(this._state);
-    }
+    this._state.profile = profileReducer(this._state.profile, action);
+    this._state.messages = dialogsReducer(this._state.messages, action);
+    this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+    this._callSubscriber(this._state);
   },
-};
-
-export let addPostActionCreator = () => {
-  return {
-    type: ADD_POST,
-  };
-};
-
-export let updateNewPostTextActionCreator = (text) => {
-  return {
-    type: UPDATE_NEW_POST_TEXT,
-    text: text,
-  };
-};
-
-export let addMessageActionCreator = () => {
-  return {
-    type: ADD_MESSAGE,
-  };
-};
-
-export let updateNewMessageTextActionCreator = (message) => {
-  return {
-    type: UPDATE_NEW_MESSAGE_TEXT,
-    message: message,
-  };
 };
 
 export default store;
