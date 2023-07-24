@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
@@ -11,28 +11,26 @@ import Settings from "./components/Settings/Settings";
 
 function App(props) {
   return (
-    <BrowserRouter>
-      <div className="app_wrapper">
-        <Header />
-        <Navbar />
-        <div className="app_wrapper_content">
-          <Routes>
-            <Route
-              path="/profile"
-              element={<Profile store={props.store} />}
-            />
-            <Route
-              path="/dialogs/*"
-              element={
-                <DialogsContainer store={props.store} />}
-            />
-            <Route path="/news" element={<News />} />
-            <Route path="/music" element={<Music />} />
-            <Route path="/settings" element={<Settings />} />
-          </Routes>
-        </div>
+    <div className="app_wrapper">
+      <Header />
+      <Navbar />
+      <div className="app_wrapper_content">
+        <Routes>
+          <Route
+            path="/profile"
+            element={<Profile />}
+          />
+          <Route
+            path="/dialogs/*"
+            element={
+              <DialogsContainer />}
+          />
+          <Route path="/news" element={<News />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/settings" element={<Settings />} />
+        </Routes>
       </div>
-    </BrowserRouter>
+    </div>
   );
 }
 
