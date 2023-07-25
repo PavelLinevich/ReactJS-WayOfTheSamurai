@@ -39,6 +39,12 @@ function Navbar(props) {
           Settings
         </NavLink>
       </div>
+      <div className={styles.item}>
+        <NavLink to="/users" className={({ isActive }) => `${isActive ? styles.activeLink : ""}`}
+        >
+          Users
+        </NavLink>
+      </div>
     </nav>
   );
 }
