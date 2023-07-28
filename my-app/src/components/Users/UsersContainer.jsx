@@ -4,12 +4,12 @@ import Users from './Users';
 import Preloader from './../common/Preloader/Preloader';
 import { connect } from 'react-redux';
 import {
-  setUsersAC,
-  followAC,
-  unfollowAC,
-  setCurrentPageAC,
-  setTotalUsersCountAC,
-  toggleIsFetchingAC
+  setUsers,
+  follow,
+  unfollow,
+  setCurrentPage,
+  setTotalUsersCount,
+  toggleIsFetching
 } from './../../redux/users-reducer';
 
 class UsersContainer extends React.Component {
@@ -61,27 +61,34 @@ let mapStateToProps = (state) => {
   }
 }
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    setUsers: (users) => {
-      dispatch(setUsersAC(users))
-    },
-    follow: (userId) => {
-      dispatch(followAC(userId))
-    },
-    unfollow: (userId) => {
-      dispatch(unfollowAC(userId))
-    },
-    setCurrentPage: (pageNumber) => {
-      dispatch(setCurrentPageAC(pageNumber))
-    },
-    setTotalUsersCount: (totalCount) => {
-      dispatch(setTotalUsersCountAC(totalCount))
-    },
-    toggleIsFetching: (isFetching) => {
-      dispatch(toggleIsFetchingAC(isFetching))
-    },
-  }
-}
+// let mapDispatchToProps = (dispatch) => {
+//   return {
+//     setUsers: (users) => {
+//       dispatch(setUsersAC(users))
+//     },
+//     follow: (userId) => {
+//       dispatch(followAC(userId))
+//     },
+//     unfollow: (userId) => {
+//       dispatch(unfollowAC(userId))
+//     },
+//     setCurrentPage: (pageNumber) => {
+//       dispatch(setCurrentPageAC(pageNumber))
+//     },
+//     setTotalUsersCount: (totalCount) => {
+//       dispatch(setTotalUsersCountAC(totalCount))
+//     },
+//     toggleIsFetching: (isFetching) => {
+//       dispatch(toggleIsFetchingAC(isFetching))
+//     },
+//   }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps, {
+  follow,
+  unfollow,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+  toggleIsFetching,
+})(UsersContainer);
