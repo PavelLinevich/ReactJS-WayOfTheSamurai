@@ -18,7 +18,7 @@ function App(props) {
       <div className="app_wrapper_content">
         <Routes>
           <Route
-            path="/profile/*"
+            path="/profile/:userId?/*"
             element={<ProfileContainer />}
           />
           <Route

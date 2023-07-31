@@ -22,6 +22,12 @@ function Navbar(props) {
         </NavLink>
       </div>
       <div className={styles.item}>
+        <NavLink to="/users" className={({ isActive }) => `${isActive ? styles.activeLink : ""}`}
+        >
+          Users
+        </NavLink>
+      </div>
+      <div className={styles.item}>
         <NavLink to="/news" className={({ isActive }) => `${isActive ? styles.activeLink : ""}`}
         >
           News
@@ -37,12 +43,6 @@ function Navbar(props) {
         <NavLink to="/settings" className={({ isActive }) => `${isActive ? styles.activeLink : ""}`}
         >
           Settings
-        </NavLink>
-      </div>
-      <div className={styles.item}>
-        <NavLink to="/users" className={({ isActive }) => `${isActive ? styles.activeLink : ""}`}
-        >
-          Users
         </NavLink>
       </div>
     </nav>

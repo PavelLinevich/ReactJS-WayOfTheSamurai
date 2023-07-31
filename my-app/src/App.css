@@ -16,4 +16,5 @@
 .app_wrapper_content {
   grid-area: c;
   background: #eeeeee;
+  padding: 10px;
 }
